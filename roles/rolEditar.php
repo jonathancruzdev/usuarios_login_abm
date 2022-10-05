@@ -52,7 +52,7 @@
                            
                         </div>
                         
-                        <div class="row d-flex justify-content-evenly">
+                        <div class="row mt-3 d-flex justify-content-evenly">
                             <button class="btn btn-outline-success col-md-4 " type="submit">Guardar </button>
                             <a href="index.php" class="btn btn-outline-dark col-md-4">Cancelar</a>
                         </div>
