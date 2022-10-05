@@ -16,7 +16,16 @@
             ));
             
         }
-
+        public function actualizar(){
+            $this->setQuery("UPDATE roles
+                             SET descripcion = :descripcion
+                             WHERE id_rol = :id");
+            $this->ejecutar( array(
+                ':descripcion' => $this->descripcion,
+                ':id' => $this->id
+            ));
+            
+        }
 
         public function borrar(){
             $this->setQuery("DELETE FROM roles WHERE id_rol = :id");

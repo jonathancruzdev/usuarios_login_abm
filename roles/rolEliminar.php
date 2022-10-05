@@ -1,6 +1,13 @@
 <?php
-    $id =  $_GET['id'];
-    $descripcion =  $_GET['descripcion'];
+    if(  isset( $_GET['id'] ) && isset( $_GET['descripcion'] )) {
+        $id =  $_GET['id'];
+        $descripcion =  $_GET['descripcion'];
+
+    } else {
+        $id=0;
+        $descripcion = null;
+    }
+   
 ?>
 
 <!DOCTYPE html>

@@ -1,11 +1,16 @@
 <?php
     if( isset( $_GET['id'] ) ) {
         $id =  $_GET['id'];
-    } 
+    } else {
+        $id = 0;
+    }
 
     if(  isset( $_GET['descripcion'] )) {
         $descripcion =  $_GET['descripcion'];
+    } else {
+        $descripcion = '';
     }
+
 ?>
 
 <!DOCTYPE html>
@@ -37,11 +42,12 @@
                 
 
                 <div class="card p-3">
-                    <form action="../controles/rolCrear.php" method="post" class="m-4">
+                    <form action="../controles/<?php  if($id == 0){ echo 'rolCrear.php';} else {echo 'rolActualizar.php';} ?> " method="post" class="m-4">
                         <div class="row mt-2">
                             <div class="col-md-6">
                                 <label for="descripcion">Descripción</label>
-                                <input class="form-control" name="descripcion" id="descripcion" type="text">
+                                <input class="form-control" name="descripcion" id="descripcion" type="text" value='<?php echo $descripcion; ?>'>
+                                <input class="form-control" name="id" id="id" type="text" style="display: none;" value='<?php echo $id; ?>'>
                             </div>
                            
                         </div>
