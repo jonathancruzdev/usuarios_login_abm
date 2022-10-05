@@ -1,0 +1,9 @@
+header {
+    min-height: 18vh;
+}
+main {
+    min-height: 70vh;
+}
+footer {
+    min-height: 9vh;
+}

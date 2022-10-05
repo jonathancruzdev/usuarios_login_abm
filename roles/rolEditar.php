@@ -1,0 +1,65 @@
+<?php
+    if( isset( $_GET['id'] ) ) {
+        $id =  $_GET['id'];
+    } 
+
+    if(  isset( $_GET['descripcion'] )) {
+        $descripcion =  $_GET['descripcion'];
+    }
+?>
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ABM Usuarios</title>
+    <link rel="stylesheet" href="../css/bootstrap.min.css">
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css">
+</head>
+<body>
+    <header class="d-flex justify-content-center align-items-center bg-success text-light">
+        <h1><i class="bi bi-person"></i> ABM de Roles </h1>
+    </header>
+    <main class="container">
+        <div class="row mt-4">
+            <div class="col-md-1"></div>
+            <div class="col-md-10">
+                <?php
+                    if( isset($_GET['id'] )){
+                        echo " <h2 class='text-center text-info'>Editar $descripcion </h2>";
+                    } else {
+                        echo "<h2 class='text-center text-info'>Alta de Rol</h2>";
+                    }
+                ?>
+                
+
+                <div class="card p-3">
+                    <form action="../controles/rolCrear.php" method="post" class="m-4">
+                        <div class="row mt-2">
+                            <div class="col-md-6">
+                                <label for="descripcion">Descripción</label>
+                                <input class="form-control" name="descripcion" id="descripcion" type="text">
+                            </div>
+                           
+                        </div>
+                        
+                        <div class="row d-flex justify-content-evenly">
+                            <button class="btn btn-outline-success col-md-4 " type="submit">Guardar </button>
+                            <a href="index.php" class="btn btn-outline-dark col-md-4">Cancelar</a>
+                        </div>
+                       
+                    </form>
+
+                </div>
+            </div>
+        </div>
+
+    </main>
+    <footer class="d-flex justify-content-center align-items-center bg-dark text-light">
+        <p> DV | Producción Web | 2022</p>
+    </footer>
+</body>
+</html>
